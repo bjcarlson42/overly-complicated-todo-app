@@ -39,7 +39,7 @@ const Todo = () => {
                 .onSnapshot(snapshot => {
                     setTodos(snapshot.docs.map(doc => doc.data().todo))
                 })
-    })
+    }, [AuthUser.id])
 
     const sendData = () => {
         try {
